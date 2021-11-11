@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super del Sur - Verificador</title>
+    <style>
+	
+		body {
+            height: 550px;
+            position: relative;
+        }
+		
+		#barcode {
+			margin-top: 5%;
+		}
+		
+		#logo {
+			margin-top: 2%;
+		}
+		
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+		
+		.alineacion{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+		
+		
+    </style>
+
+    <script type="text/javascript">
+
+        if (window.addEventListener) {
+            var codigo = "";
+            window.addEventListener("keydown", function (e) {
+                codigo += String.fromCharCode(e.keyCode);
+                if (e.keyCode == 13) {
+                    window.location = "mostrar_producto.php?codigo=" + codigo;
+                    codigo = "";
+                }
+            }, true);
+        }
+    </script>
+</head>
+
+<body style="background-color:rgb(143, 188, 143);">
+<div class="alineacion">
+
+	<img id="logo" src="img/Logo.png" alt="" width="450px" height="auto">
+	<h1>Favor de escanear el código del producto</h1>
+    <img id="barcode" src="img/barcode-scan.gif" alt="" width="190px" height="auto">
+
+</div>
+</body>
+
+</html>
